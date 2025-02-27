@@ -1,7 +1,3 @@
 <template>
-  <div>
-    <Dark></Dark>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout></NuxtLayout>
 </template>

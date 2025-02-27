@@ -10,13 +10,15 @@ export const useMyThemeStore = defineStore("myThemeStore", () => {
   };
 
   const darkMode = () => {
-    document.documentElement.classList.add("dark");
+    // 设置 data-theme 为 dark
+    document.documentElement.setAttribute("data-theme", "dark");
     localStorage.theme = "dark";
     theme.value = "dark";
   };
 
   const lightMode = () => {
-    document.documentElement.classList.remove("dark");
+    // 设置 data-theme 为 light
+    document.documentElement.setAttribute("data-theme", "light");
     localStorage.theme = "light";
     theme.value = "light";
   };
