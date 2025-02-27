@@ -8,13 +8,18 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "stylesheet",
+          href: "https://unpkg.com/md-editor-v3@5.3.2/lib/style.css",
+        },
+        // 添加预览样式
+        {
+          rel: "stylesheet",
           href: "https://unpkg.com/md-editor-v3@5.3.2/lib/preview.css",
         },
       ],
       script: [
         {
           src: "https://unpkg.com/md-editor-v3@5.3.2/lib/umd/index.js",
-          body: true,
+          defer: true,
         },
       ],
     },
@@ -27,12 +32,7 @@ export default defineNuxtConfig({
     [
       "@pinia/nuxt",
       {
-        autoImports: [
-          // 自动引入 `defineStore()`
-          "defineStore",
-          // 自动引入 `defineStore()` 并重命名为 `definePiniaStore()`
-          ["defineStore", "definePiniaStore"],
-        ],
+        autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
       },
     ],
   ],

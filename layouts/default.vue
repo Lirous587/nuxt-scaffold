@@ -2,14 +2,15 @@
   <div>
     <NavHeader></NavHeader>
     <main>
-      <MdEdit></MdEdit>
+      <MdEdit :content="markdownContent"></MdEdit>
+      <MdView :content="markdownContent"></MdView>
     </main>
   </div>
 </template>
 
 <script lang="ts" setup>
-const content = ref(`
- # 标题1
- ## 标题2
-`);
+const markdownContent = ref(
+  "# Hello Markdown\n这是一段示例文本\n[超链接](https://github.com/Lirous587)"
+);
+const previewTheme = ref("default");
 </script>
