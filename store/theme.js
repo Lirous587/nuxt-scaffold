@@ -1,5 +1,5 @@
 export const useMyThemeStore = defineStore("myThemeStore", () => {
-  const theme = ref("dark");
+  const theme = ref("light");
 
   const initMode = () => {
     if (localStorage.theme === "dark") {
@@ -26,6 +26,10 @@ export const useMyThemeStore = defineStore("myThemeStore", () => {
   const getMode = () => {
     return theme;
   };
+
+  onMounted(() => {
+    initMode();
+  });
 
   return {
     theme,
