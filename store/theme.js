@@ -27,10 +27,6 @@ export const useMyThemeStore = defineStore("myThemeStore", () => {
     return theme;
   };
 
-  onMounted(() => {
-    initMode();
-  });
-
   return {
     theme,
     initMode,
