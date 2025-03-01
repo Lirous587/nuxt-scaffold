@@ -1,7 +1,18 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, cupcake;
+    themes: all;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* 移除 input 默认聚焦状态  */
+@layer override {
+
+    /* 聚焦状态 */
+    .input:focus,
+    .input:focus-visible,
+    .input:focus-within {
+        outline: none;
+    }
+}
